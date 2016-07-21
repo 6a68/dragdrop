@@ -49,7 +49,9 @@
     <h2>drag the shapes to their containers.</h2>
     <div>
       <div id="circle-container" class="container">
-        <div id="circle" class="shape"><img width=50 src="circle.png" draggable="true" ondragstart="dragstart_handler(event);"></div>
+        <div id="circle" class="shape" draggable="true" ondragstart="dragstart_handler(event);">
+          <img width=50 src="circle.png" draggable="false">
+        </div>
         <div id="circleDrop" class="dropzone" ondrop="drop_handler(event);" ondragover="dragover_handler(event)" ondragenter="event.preventDefault()"></div>
       </div>
       <div id="square-container" class="container">
