@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>drag and drop</title>
+    <script src="dragdrop.js"></script>
+
+<!--     stuff for react -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-dom.js"></script>
+    
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 20px;
+      }
+
+      div {
+        margin: 20px;
+      }
+
+      .container {
+        border: solid black;
+        height: 150px;
+        width: 100%;
+      }
+
+      .shape {
+        display: inline-block;
+      }
+
+      .dropzone {
+        border: solid black;
+        display: inline-block;
+        position: relative;
+        height: 70px;
+        left: 50%;
+        width: 70px;
+      }
+
+      .dropzone:-moz-drag-over {
+        border: 1px dashed black;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h2>drag the shapes to their containers.</h2>
+    <div>
+      <div id="circle-container" class="container">
+        <div id="circle" class="shape"><img width=50 src="circle.png" draggable="true" ondragstart="dragstart_handler(event);"></div>
+        <div id="circleDrop" class="dropzone" ondrop="drop_handler(event);" ondragover="dragover_handler(event)" ondragenter="event.preventDefault()"></div>
+      </div>
+      <div id="square-container" class="container">
+        <div id="square" class="shape"><img width=50 src="square.png" draggable="true" ondragstart="dragstart_handler(event);"></div>
+        <div id="squareDrop" class="dropzone" ondrop="drop_handler(event);" ondragover="dragover_handler(event)" ondragenter="event.preventDefault()"></div>
+      </div>
+    <div>
+  </body>
+</html>
